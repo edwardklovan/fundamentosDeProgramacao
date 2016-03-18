@@ -1,6 +1,6 @@
 /**
  * @author Edward
- * @version 10/03/2016 aaa
+ * @version 10/03/2016
  * Programa que calcula a quantidade de latas de tinta necessárias
  * e o custo para pintar tanques cilíndricos de combustível.
  *
