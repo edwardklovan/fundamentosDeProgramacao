@@ -1,7 +1,6 @@
 /**
  * @author Edward
- * @version 16/03/2016
-
+ * @version 16/03/2016 v0.01
  *
  */
 import java.util.Scanner;
