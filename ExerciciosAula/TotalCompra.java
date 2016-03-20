@@ -1,9 +1,6 @@
 /**
  * @author Edward
  * @version 16/03/2016
- * agora estou usando o branch teste.
- * novas funcções implementadas.
- *
  */
 import java.util.Scanner;
 
