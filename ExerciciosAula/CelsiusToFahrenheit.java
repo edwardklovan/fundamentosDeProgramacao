@@ -11,9 +11,9 @@ public class CelsiusToFahrenheit {
 		System.out.println("Digite a temperatura em Celsius.");
 		c = entrada.nextInt();
 
-		f = (9/5) * (c) + 32;
+		f = (9/5 * c) + 32;
 
-		System.out.println(f);
+		System.out.println("A temperatura Celsius para Fahrenheit é \n" + f);
 
 	}
 }
