@@ -11,7 +11,7 @@ public class CentraisEletricasT1PriscillaOverbeckEdwardKlovan{
 
         Scanner entrada = new Scanner (System.in);
 
-        System.out.println("Digite o código da primeira central: ");
+        System.out.println("Digite o código e a quantidade de energia gerada da primeira central: ");
         central1 = entrada.nextInt();
 
         System.out.println("Digite a quantidade de energia gerada na central: " + central1 + " : ");
@@ -36,10 +36,9 @@ public class CentraisEletricasT1PriscillaOverbeckEdwardKlovan{
         qtdCentral4 = entrada.nextDouble();
 
 
-
         //A quantidade média de energia gerada pelas quatro centrais;
 
-        qtdMedia = (qtdCentral1 + qtdCentral2 + qtdCentral3 + qtdCentral4)/4;
+        qtdMedia = (qtdCentral1 + qtdCentral2 + qtdCentral3 + qtdCentral4) / 4;
 
         //O número de centrais subutilizadas (gerando menos de 800 MW)
 
