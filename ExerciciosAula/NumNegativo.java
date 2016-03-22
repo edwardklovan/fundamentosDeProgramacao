@@ -23,6 +23,6 @@ public class NumNegativo {
 
         } while (continuar == 1);
 
-        System.out.println("Você digitou " + contador + " núneros negativos.");
+        System.out.println("Você digitou " + contador + " núneros.");
     }
 }
