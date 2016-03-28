@@ -15,6 +15,8 @@ public class AumentarEnergia {
         int codCentral1, codCentral2, codCentral3;
         int qeCentral1, qeCentral2, qeCentral3;
         int codigoCentral, novoValor;
+        int totalEnergia;
+        double mediaEnergia;
         
         codCentral1 = 50;
         codCentral2 = 51;
@@ -37,6 +39,13 @@ public class AumentarEnergia {
                 System.out.println("Digite o novo valor.");
                 novoValor = entrada.nextInt();
                 
+                while (novoValor > 10000) {
+                     System.out.println("A central não suporta valores acima de 10000MW. Digite outro valor.");
+                     novoValor = entrada.nextInt();
+                }
+                
+          
+                
                 if (codigoCentral == codCentral1) {
                     qeCentral1 = novoValor;
                 }
@@ -56,9 +65,15 @@ public class AumentarEnergia {
                  System.out.println("Central " + codCentral3 + ":" + qeCentral3 + "MW");
                  System.out.println("\n");
                  
-                System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
-                codigoCentral = entrada.nextInt();
-                    
+                 totalEnergia = qeCentral1 + qeCentral2 + qeCentral3;
+                 System.out.println("O total de energia das três centrais é de "  + totalEnergia);
+                 
+                 mediaEnergia = (qeCentral1 + qeCentral2 + qeCentral3) / 3;
+                 System.out.println("A média de energia gasta é de " + mediaEnergia);
+                 
+                 System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
+                 codigoCentral = entrada.nextInt();
+                 System.out.println("\n");                           
             }
           
         if (codigoCentral == 0) {
