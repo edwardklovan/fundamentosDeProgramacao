@@ -17,6 +17,7 @@ public class AumentarEnergia {
         int codigoCentral, novoValor;
         int totalEnergia;
         double mediaEnergia;
+        double soma;
         
         codCentral1 = 50;
         codCentral2 = 51;
@@ -27,6 +28,7 @@ public class AumentarEnergia {
         qeCentral3 = 0;
         
         novoValor = 1;
+        soma = 0;
         
         // entrada de dados
         Scanner entrada = new Scanner(System.in); 
@@ -34,7 +36,7 @@ public class AumentarEnergia {
         System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
         codigoCentral = entrada.nextInt();
                 
-        while (codigoCentral != 0) {
+        while (codigoCentral != 0 && soma <= 24000) {
               
                 System.out.println("Digite o novo valor.");
                 novoValor = entrada.nextInt();
@@ -80,12 +82,16 @@ public class AumentarEnergia {
                  totalEnergia = qeCentral1 + qeCentral2 + qeCentral3;
                  System.out.println("O total de energia das três centrais é de "  + totalEnergia);
                  
-                 mediaEnergia = (qeCentral1 + qeCentral2 + qeCentral3) / 3;
+                 soma = qeCentral1 + qeCentral2 + qeCentral3;
+                 mediaEnergia = soma / 3;
                  System.out.println("A média de energia gasta é de " + mediaEnergia);
                  
-                 System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
-                 codigoCentral = entrada.nextInt();
-                 System.out.println("\n");                           
+                 
+                 if (soma < 24000) {
+                     System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
+                     codigoCentral = entrada.nextInt();
+                     System.out.println("\n");
+                    }
             }
           
         if (codigoCentral == 0) {
