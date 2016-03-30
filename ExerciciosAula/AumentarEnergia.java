@@ -39,23 +39,35 @@ public class AumentarEnergia {
                 System.out.println("Digite o novo valor.");
                 novoValor = entrada.nextInt();
                 
-                while (novoValor > 10000) {
-                     System.out.println("A central não suporta valores acima de 10000MW. Digite outro valor.");
-                     novoValor = entrada.nextInt();
-                }
+                //while (novoValor > 10000) {
+                     //System.out.println("A central não suporta valores acima de 10000MW. Digite outro valor.");
+                     //novoValor = entrada.nextInt();
+                //}
                 
           
                 
                 if (codigoCentral == codCentral1) {
-                    qeCentral1 = novoValor;
+                    if (qeCentral1 + novoValor < 1000) {
+                        qeCentral1 = novoValor;
+                    } else {
+                        System.out.println("A central não aceita valores acima de 10000.");
+                    }
                 }
             
                 if (codigoCentral == codCentral2) {
-                    qeCentral2 = novoValor;
+                   if (qeCentral1 + novoValor < 1000) {
+                        qeCentral1 = novoValor;
+                    } else {
+                        System.out.println("A central não aceita valores acima de 10000.");
+                    }
                 }
             
                 if (codigoCentral == codCentral3) {
-                    qeCentral3 = novoValor;
+                   if (qeCentral1 + novoValor < 1000) {
+                        qeCentral1 = novoValor;
+                    } else {
+                        System.out.println("A central não aceita valores acima de 10000.");
+                    }
                 }
                 
                  System.out.println("\n");
