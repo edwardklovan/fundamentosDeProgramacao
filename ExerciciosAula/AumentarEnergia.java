@@ -17,6 +17,10 @@ public class AumentarEnergia {
         int codigoCentral, novoValor;
         int totalEnergia;
         double mediaEnergia;
+<<<<<<< HEAD
+=======
+        double soma;
+>>>>>>> b44f1a0df7d3fbd0379a9e287f372ec22cd9a707
         
         codCentral1 = 50;
         codCentral2 = 51;
@@ -27,6 +31,10 @@ public class AumentarEnergia {
         qeCentral3 = 0;
         
         novoValor = 1;
+<<<<<<< HEAD
+=======
+        soma = 0;
+>>>>>>> b44f1a0df7d3fbd0379a9e287f372ec22cd9a707
         
         // entrada de dados
         Scanner entrada = new Scanner(System.in); 
@@ -34,19 +42,31 @@ public class AumentarEnergia {
         System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
         codigoCentral = entrada.nextInt();
                 
+<<<<<<< HEAD
         while (codigoCentral != 0) {
+=======
+        while (codigoCentral != 0 && soma <= 24000) {
+>>>>>>> b44f1a0df7d3fbd0379a9e287f372ec22cd9a707
               
                 System.out.println("Digite o novo valor.");
                 novoValor = entrada.nextInt();
                 
+<<<<<<< HEAD
                 while (novoValor > 10000) {
                      System.out.println("A central não suporta valores acima de 10000MW. Digite outro valor.");
                      novoValor = entrada.nextInt();
                 }
+=======
+                //while (novoValor > 10000) {
+                     //System.out.println("A central não suporta valores acima de 10000MW. Digite outro valor.");
+                     //novoValor = entrada.nextInt();
+                //}
+>>>>>>> b44f1a0df7d3fbd0379a9e287f372ec22cd9a707
                 
           
                 
                 if (codigoCentral == codCentral1) {
+<<<<<<< HEAD
                     qeCentral1 = novoValor;
                 }
             
@@ -56,6 +76,29 @@ public class AumentarEnergia {
             
                 if (codigoCentral == codCentral3) {
                     qeCentral3 = novoValor;
+=======
+                    if (qeCentral1 + novoValor < 1000) {
+                        qeCentral1 = novoValor;
+                    } else {
+                        System.out.println("A central não aceita valores acima de 10000.");
+                    }
+                }
+            
+                if (codigoCentral == codCentral2) {
+                   if (qeCentral1 + novoValor < 1000) {
+                        qeCentral1 = novoValor;
+                    } else {
+                        System.out.println("A central não aceita valores acima de 10000.");
+                    }
+                }
+            
+                if (codigoCentral == codCentral3) {
+                   if (qeCentral1 + novoValor < 1000) {
+                        qeCentral1 = novoValor;
+                    } else {
+                        System.out.println("A central não aceita valores acima de 10000.");
+                    }
+>>>>>>> b44f1a0df7d3fbd0379a9e287f372ec22cd9a707
                 }
                 
                  System.out.println("\n");
@@ -68,12 +111,25 @@ public class AumentarEnergia {
                  totalEnergia = qeCentral1 + qeCentral2 + qeCentral3;
                  System.out.println("O total de energia das três centrais é de "  + totalEnergia);
                  
+<<<<<<< HEAD
                  mediaEnergia = (qeCentral1 + qeCentral2 + qeCentral3) / 3;
                  System.out.println("A média de energia gasta é de " + mediaEnergia);
                  
                  System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
                  codigoCentral = entrada.nextInt();
                  System.out.println("\n");                           
+=======
+                 soma = qeCentral1 + qeCentral2 + qeCentral3;
+                 mediaEnergia = soma / 3;
+                 System.out.println("A média de energia gasta é de " + mediaEnergia);
+                 
+                 
+                 if (soma < 24000) {
+                     System.out.println("Digite o código da central que deseja alterar. Para sair digite 0");
+                     codigoCentral = entrada.nextInt();
+                     System.out.println("\n");
+                    }
+>>>>>>> b44f1a0df7d3fbd0379a9e287f372ec22cd9a707
             }
           
         if (codigoCentral == 0) {
