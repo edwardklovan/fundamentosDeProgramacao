@@ -9,6 +9,7 @@ public class EnergiaGerada {
         int qeCentral;
         int k;
         int maiorValor;
+        int maiorCentral;
         
         double media;
              
@@ -19,6 +20,7 @@ public class EnergiaGerada {
         maiorValor = 0;
         qeCentral = 0;
         codCentral = 0;
+      
         
         System.out.println("Digite o número de centrais desejado:");
         k = entrada.nextInt();
@@ -31,9 +33,7 @@ public class EnergiaGerada {
             System.out.println("Digite a quantidade de energia gerada:");
             qeCentral = entrada.nextInt();
             
-            if (qeCentral > maiorValor) {
-                maiorValor = codCentral;
-            }           
+                      
            
             if (qeCentral < 800) {
                 System.out.println("Central " + codCentral + " subutilizada!");
@@ -41,6 +41,11 @@ public class EnergiaGerada {
                 System.out.println("Central " + codCentral + " superutilizada!");
             }
             
+            
+            if (qeCentral > maiorValor) {
+                maiorValor = qeCentral;
+                maiorCentral = codCentral;
+            } 
           
             
         }
@@ -48,7 +53,7 @@ public class EnergiaGerada {
         media = qeCentral / k;
         System.out.println("A média de energia gerada é de " + media);
         
-        System.out.println("A central que tem maior energia é a " + codCentral);
+        System.out.println("A central que tem maior energia é a " + maiorCentral + " com o valor de " + maiorValor);
    ;
         
         
