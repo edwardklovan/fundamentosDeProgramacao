@@ -22,14 +22,24 @@ public class ExercicioCondominio {
      * @return novo número de terrenos nos vetores
      */
     public static int opcaoCadastraTerreno(int[] numeros, double[] areas, int numTerrenos) {
-        //IMPLEMENTE ESSA!
-        //com um while, pergunte ao usuário um numero e uma area
-        // e coloque na próxima posição livre do vetor (qual é próxima posição 
-        // livre do vetor?) 
-        // O while deve parar se o usuário quiser, ou caso tenha acabado
-        // o espaço nos vetoes (como saber o tamanho dos vetores?)
-
-        return 0; //mudar
+        int continuar = 1;
+        int i = numTerrenos;
+        Scanner entrada = new Scanner(System.in);
+        
+        do { 
+            System.out.println("Digite o número do terreno:");       
+            numeros[i] = entrada.nextInt();
+            
+            System.out.println("Digite a área do terreno:");       
+            areas[i] = entrada.nextInt();
+                
+            System.out.println("Digite 1 para continuar.");       
+            continuar = entrada.nextInt();
+            i++;
+        
+        } while (continuar == 1 && i < numeros.length);
+        
+        return i;
     }
 
     /**
@@ -44,6 +54,10 @@ public class ExercicioCondominio {
     public static void opcaoMostrarTodosOsTerrenos(int[] numeros, double[] areas, int numTerrenos) {
         //IMPLEMENTE ESSA!
         //Use somente um for
+        
+        for (int i = 0; i < numTerrenos; i++ ) {
+            System.out.println(numeros[i] + "-" + areas[i]);
+        }
 
     }
 
@@ -215,7 +229,7 @@ public class ExercicioCondominio {
         int opcao = 0;
 
         //inicializa alguns valores iniciais
-        geraValoresIniciais(numerosTerrenos,areaTerrenos,nTerrenos);
+        nTerrenos = geraValoresIniciais(numerosTerrenos,areaTerrenos,nTerrenos);
         
         Scanner entrada = new Scanner(System.in);
 
