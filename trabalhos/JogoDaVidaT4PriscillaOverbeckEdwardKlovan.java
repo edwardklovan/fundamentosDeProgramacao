@@ -13,7 +13,6 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
                     
                    System.out.print("O" + " ");
                    
-                   
                }else if (m [i][j] == false){
                 
                    System.out.print(" " + " ");
@@ -41,6 +40,7 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
            System.out.println("Digite o número de gerações a executar: ");
            ger = entrada.nextInt(); 
            boolean [][] tab = new boolean [tam][tam];
+           int turno = 0;
            
            for (int i = 0; i < tam; i++){
                
@@ -51,18 +51,22 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
                 
            }
             
-           for (int i = 1; i < tam-1; i++){
+           do{
+           
+               for (int i = 1; i < tam-1; i++){
             
-                for (int j = 1; j < tam-1; j++){
+                   for (int j = 1; j < tam-1; j++){
                 
-                    atualiza(tab, i, j, celulas (tab,i,j));
+                       atualiza(tab, i, j, celulas (tab,i,j));
                                     
-                }
+                    }
             
-           }
-           imprimeMatriz(tab);
-        
-        
+                }
+                
+                imprimeMatriz(tab);
+                turno++;
+            }while (turno <= ger);
+                    
         }while (tam < 15);
         
         
