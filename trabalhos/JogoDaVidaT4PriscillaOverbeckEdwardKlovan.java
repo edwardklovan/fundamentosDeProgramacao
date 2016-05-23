@@ -3,11 +3,28 @@ import java.lang.*;
 
 public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
 
-   // public static void impssrimeMatriz (boolean [][] m){
+    public static void imprimeMatriz (boolean [][] m){
     
-    
-    //}
-    
+        for (int i = 0; i < m.length; i++){
+        
+            for (int j = 0; j < m.length; j++){
+            
+                if (m [i][j] == true){
+                    
+                   System.out.print("O" + " ");
+                   
+                   
+               }else if (m [i][j] == false){
+                
+                   System.out.print(" " + " ");
+                   
+               }
+        
+           }
+           System.out.println();
+        }
+        
+    }
     
     public static void main (String[] args){
     
@@ -20,6 +37,7 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
         do{
            System.out.println("Digite o tamanho do tabuleiro: ");
            tam = entrada.nextInt();
+           
            System.out.println("Digite o número de gerações a executar: ");
            ger = entrada.nextInt(); 
            boolean [][] tab = new boolean [tam][tam];
@@ -31,28 +49,23 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
                    tab [i][j] = gerador.nextBoolean();
                 }
                 
-            }
-            
-           for (int i = 0; i < tam; i++){
-        
-               for (int j = 0; j < tam; j++){
-            
-                   //if (tab[i][j] == true){
-                    
-                    System.out.print(tab[i][j] + " ");
-                   // }
-                   
-               }
-        
-               System.out.println();
            }
+            
+           for (int i = 1; i < tam-1; i++){
+            
+                for (int j = 1; j < tam-1; j++){
+                
+                    atualiza(tab, i, j, celulas (tab,i,j));
+                                    
+                }
+            
+           }
+           imprimeMatriz(tab);
+        
         
         }while (tam < 15);
         
         
-            
-            
-            
     }           
                 
     public static int celulas ( boolean [][] m, int i, int j){    
@@ -117,6 +130,10 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
            //Qualquer célula morta com exatamente 3 vizinhas vivas se torna viva (reprodução)
            m [i][j] = true;
         
+        }else{
+        
+            m[i][j] = m[i][j];
+            
         }
         
     }
