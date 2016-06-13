@@ -22,7 +22,14 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
            }
            System.out.println();
         }
-        
+        System.out.println();
+        System.out.println();
+        for (int i = 0; i < (m.length/2); i++){
+            System.out.print("# - ");
+            
+        }
+        System.out.println();
+        System.out.println();
     }
     
     public static void main (String[] args){
@@ -47,15 +54,18 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
                for (int j = 0; j < tam; j++){
                    
                    tab [i][j] = gerador.nextBoolean();
+                   
                 }
                 
            }
             
+           imprimeMatriz(tab);
+                      
            do{
            
-               for (int i = 1; i < tam-1; i++){
+               for (int j = 1; j < tam-1; j++){
             
-                   for (int j = 1; j < tam-1; j++){
+                   for (int i = 1; i < tam-1; i++){
                 
                        atualiza(tab, i, j, celulas (tab,i,j));
                                     
@@ -65,7 +75,7 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
                 
                 imprimeMatriz(tab);
                 turno++;
-            }while (turno <= ger);
+            }while (turno < ger);
                     
         }while (tam < 15);
         
@@ -79,31 +89,38 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
         
             cont++;
             
-        }else if(m [i-1][j] == true){
+        }
+        if(m [i-1][j] == true){
         
             cont++;
         
-        }else if (m [i-1][j+1] == true){
+        }
+        if (m [i-1][j+1] == true){
         
             cont++;
             
-        }else if (m [i][j-1] == true){
+        }
+        if (m [i][j-1] == true){
         
             cont++;
             
-        }else if (m [i][j+1] == true){
+        }
+        if (m [i][j+1] == true){
         
             cont++;
             
-        }else if (m [i+1][j-1] == true){
+        }
+        if (m [i+1][j-1] == true){
         
             cont++;
             
-        }else if (m [i+1][j] == true){
+        }
+        if (m [i+1][j] == true){
             
             cont++;
             
-        }else if (m [i+1][j+1] == true){
+        }
+        if (m [i+1][j+1] == true){
             
             cont++;
             
@@ -129,7 +146,7 @@ public class JogoDaVidaT4PriscillaOverbeckEdwardKlovan{
             //Qualquer célula viva com mais de 3 vizinhas vivas morre (superpopulação);
             m [i][j] = false;
             
-        }else if ((celulas (m, i, j) == 3) && ((m[i][j]) == true)){
+        }else if ((celulas (m, i, j) == 3) && ((m[i][j]) == false)){
         
            //Qualquer célula morta com exatamente 3 vizinhas vivas se torna viva (reprodução)
            m [i][j] = true;

@@ -6,7 +6,7 @@ public class CaixaRegistradoraTester {
 	public static void main(String[] args) {
 		CaixaRegistradora caixa = new CaixaRegistradora();
 
-		// adiciona três itens
+		// adiciona tres itens
 		caixa.addItem(1.99);
 		caixa.addItem(2.99);
 		caixa.addItem(1.50);

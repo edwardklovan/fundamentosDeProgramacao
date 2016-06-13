@@ -1,30 +1,41 @@
 
 public class CaixaRegistradora {
 
-	private double precoTotal;
-	private int numItens;
+	private double[] precoItens;
+	private int totalItens;
 	
 	public CaixaRegistradora(){
-		precoTotal = 0;
-		numItens = 0;
+		precoItens = new double[10];
+		totalItens = 0;
 	}
 	
 	public void addItem(double preco){
-		precoTotal += preco;
+		if (totalItens < 10) {
+			precoItens[totalItens] = preco;
+			totalItens++;
+		}
 	}
 	
 	public double getTotal(){
-		return precoTotal;
+		double total = 0;
+		for (int i = 0; i < totalItens; i++) {
+			total = total + precoItens[i];
+		}
+		return total;
 	}
 	
 	public int getNumItens(){
-		return numItens;
+		return totalItens;
 	}
 	
 	public void limpa(){
-		precoTotal = 0;
-		numItens = 0;
+		totalItens = 0;
 	}
-	
-	
+
+	public void imprimeItens() {
+		for (int i =0; i < totalItens; i++) {
+			System.out.println("Preco do item " + i + ": " + precoItens[i]);
+		}
+	}
+		
 }
